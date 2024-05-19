@@ -15,8 +15,8 @@ function Logo({ mode }: LogoProps) {
 
   if (mode === "dark")
     return (
-      <div className="h-12 self-center">
-        <img src={darkLogo} alt="logo_light" />
+      <div className="h-12">
+        <img src={darkLogo} alt="logo_dark" />
       </div>
     );
 }
