@@ -1,7 +1,19 @@
+import { Button } from "@/components/ui/button";
+
 function Home() {
   return (
-    <div>
-      <h1>home page!</h1>
+    <div className="mx-auto flex flex-col items-center gap-6 py-32 text-neutral-800">
+      <h1 className="text-4xl">
+        &#34;深く理解されることの喜びを体験しよう&rdquo;
+      </h1>
+      <h3 className="flex flex-col items-center text-2xl">
+        <span>たった10問で自分自身について</span>
+        <span>信じられないほど正確な理解が手に入ります</span>
+      </h3>
+
+      <Button size="lg" className="mt-4" variant="default">
+        テストを受ける <span>&rarr;</span>
+      </Button>
     </div>
   );
 }
