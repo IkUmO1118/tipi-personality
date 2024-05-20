@@ -8,8 +8,8 @@ type LogoProps = {
 function Logo({ mode }: LogoProps) {
   if (mode === "light")
     return (
-      <div className="h-12 self-center">
-        <img src={lightLogo} alt="logo_light" />
+      <div className="flex items-center">
+        <img className="" src={lightLogo} alt="logo_light" />
       </div>
     );
 

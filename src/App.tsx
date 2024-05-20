@@ -7,6 +7,8 @@ import Diagnosis from "./pages/Diagnosis";
 import About from "./pages/About";
 import Result from "./pages/Result";
 import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
+import Testimonials from "./pages/Testimonials";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="Result" element={<Result />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="privacy" element={<Privacy />} />
+          <Route path="testimonials" element={<Testimonials />} />
         </Route>
 
         <Route path="register" element={<Register />} />

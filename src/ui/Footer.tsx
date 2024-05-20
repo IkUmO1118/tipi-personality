@@ -1,7 +1,11 @@
+import CopyRight from "./CopyRight";
+import FooterNav from "./FooterNav";
+
 function Footer() {
   return (
-    <div className="bg-green-500">
-      <h1>footer</h1>
+    <div className="flex flex-col items-center border-t border-neutral-300 py-3">
+      <CopyRight />
+      <FooterNav />
     </div>
   );
 }
