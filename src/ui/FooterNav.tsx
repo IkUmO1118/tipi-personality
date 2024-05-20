@@ -10,7 +10,7 @@ function FooterNav() {
         Privacy Policy
       </NavLink>
       <NavLink to="testimonials" className="hover:underline">
-        Testmonials
+        Testimonials
       </NavLink>
     </div>
   );

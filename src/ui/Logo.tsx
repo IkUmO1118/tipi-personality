@@ -1,5 +1,6 @@
 import lightLogo from "/logo-light.svg";
 import darkLogo from "/logo-dark.svg";
+import { NavLink } from "react-router-dom";
 
 type LogoProps = {
   mode: string;
@@ -8,9 +9,9 @@ type LogoProps = {
 function Logo({ mode }: LogoProps) {
   if (mode === "light")
     return (
-      <div className="flex items-center">
+      <NavLink className="flex items-center" to="/">
         <img className="" src={lightLogo} alt="logo_light" />
-      </div>
+      </NavLink>
     );
 
   if (mode === "dark")
