@@ -1,4 +1,5 @@
-import { PiGithubLogoBold } from "react-icons/pi";
+import { FaGithub } from "react-icons/fa6";
+
 function CopyRight() {
   return (
     <div className="flex gap-7">
@@ -11,7 +12,7 @@ function CopyRight() {
         target="_blank"
         rel="noreferrer"
       >
-        <PiGithubLogoBold className="h-5 w-5 self-center text-neutral-500  transition-all duration-200 hover:scale-125" />
+        <FaGithub className="h-5 w-5 self-center text-neutral-500  transition-all duration-200 hover:scale-125" />
       </a>
     </div>
   );

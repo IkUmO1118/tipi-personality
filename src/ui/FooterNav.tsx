@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function FooterNav() {
   return (
-    <div className="flex items-center gap-32 font-light text-neutral-400">
+    <div className="flex items-center gap-40 font-light text-neutral-400">
       <NavLink to="contact" className="hover:underline ">
         Contact
       </NavLink>

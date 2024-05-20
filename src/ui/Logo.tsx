@@ -10,16 +10,12 @@ function Logo({ mode }: LogoProps) {
   if (mode === "light")
     return (
       <NavLink className="flex items-center" to="/">
-        <img className="" src={lightLogo} alt="logo_light" />
+        <img src={lightLogo} alt="logo_light" />
       </NavLink>
     );
 
   if (mode === "dark")
-    return (
-      <div className="h-12">
-        <img src={darkLogo} alt="logo_dark" />
-      </div>
-    );
+    return <img src={darkLogo} alt="logo_dark" className="h-12" />;
 }
 
 export default Logo;

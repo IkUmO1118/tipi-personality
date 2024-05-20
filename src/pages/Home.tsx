@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
+
   return (
     <div className="mx-auto flex flex-col items-center gap-6 py-32 text-neutral-800">
       <h1 className="text-5xl">
