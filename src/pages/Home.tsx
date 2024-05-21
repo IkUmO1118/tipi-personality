@@ -20,7 +20,7 @@ function Home() {
         variant="default"
         onClick={() => navigate("/register")}
       >
-        テストを受ける <span>&rarr;</span>
+        テストを受ける
       </Button>
     </div>
   );
