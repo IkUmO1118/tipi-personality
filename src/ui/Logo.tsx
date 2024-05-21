@@ -3,7 +3,7 @@ import darkLogo from "/logo-dark.svg";
 import { NavLink } from "react-router-dom";
 
 type LogoProps = {
-  mode: string;
+  mode: "light" | "dark";
 };
 
 function Logo({ mode }: LogoProps) {

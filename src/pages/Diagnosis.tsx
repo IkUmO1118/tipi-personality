@@ -1,10 +1,10 @@
-import DiagnosisPage from "@/features/diagnosis/DiagnosisPage";
+import DiagnosisForm from "@/features/diagnosis/DiagnosisForm";
 import Logo from "@/ui/Logo";
 
 function Diagnosis() {
   return (
     <main className="grid h-screen grid-cols-2 p-3">
-      <div className="relative grid h-full grid-rows-[1fr_5fr_1fr_6fr] rounded-l-lg bg-neutral-900 px-14 py-7">
+      <div className="relative grid h-full grid-rows-[1fr_5fr_1fr_6fr] rounded-l-lg bg-neutral-900 px-10 py-7">
         <Logo mode="dark" />
 
         <p className="mb-4 self-end text-2xl font-medium text-neutral-300">
@@ -14,7 +14,7 @@ function Diagnosis() {
           自分は活発で、外向的だと思う
         </h2>
       </div>
-      <DiagnosisPage />
+      <DiagnosisForm />
     </main>
   );
 }

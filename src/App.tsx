@@ -22,11 +22,11 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="privacy" element={<Privacy />} />
           <Route path="testimonials" element={<Testimonials />} />
+          <Route path="*" element={<PageNotFound />} />
         </Route>
 
         <Route path="register" element={<Register />} />
         <Route path="diagnosis" element={<Diagnosis />} />
-        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );
