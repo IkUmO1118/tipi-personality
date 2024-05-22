@@ -12,14 +12,26 @@ function PageNotFound() {
       <h1 className="mx-auto font-mono text-4xl font-semibold text-neutral-800">
         Oops. This page does not exist.
       </h1>
-      <div className="mx-auto flex items-center justify-center gap-6">
-        <Button size="lg" onClick={() => navigate("/register")}>
+      <div className="mx-auto flex items-center justify-center gap-8">
+        <Button
+          size="lg"
+          variant="destructive"
+          onClick={() => navigate("/register")}
+        >
           テストを受ける
         </Button>
-        <Button size="lg" onClick={() => navigate("/about")}>
+        <Button
+          size="lg"
+          variant="destructive"
+          onClick={() => navigate("/about")}
+        >
           性格タイプ
         </Button>
-        <Button size="lg" onClick={() => navigate("/contact")}>
+        <Button
+          size="lg"
+          variant="destructive"
+          onClick={() => navigate("/contact")}
+        >
           お問い合わせ
         </Button>
       </div>
