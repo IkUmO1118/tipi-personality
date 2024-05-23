@@ -1,10 +1,14 @@
 type AboutBaseArticleProps = {
   title: string;
   description: string;
-  color: string
+  color: string;
 };
 
-function AboutBaseArticle({ title, description, color }: AboutBaseArticleProps) {
+function AboutBaseArticle({
+  title,
+  description,
+  color,
+}: AboutBaseArticleProps) {
   return (
     <article className=" w-11/12">
       <h2 className={`text-3xl font-bold text-${color}`}>

@@ -7,7 +7,7 @@ import Diagnosis from "./pages/Diagnosis";
 import About from "./pages/About";
 import Result from "./pages/Result";
 import Contact from "./pages/Contact";
-import Privacy from "./pages/Privacy";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Testimonials from "./pages/Testimonials";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="Result" element={<Result />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="privacy" element={<Privacy />} />
+          <Route path="privacy" element={<PrivacyPolicy />} />
           <Route path="testimonials" element={<Testimonials />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>

@@ -1,5 +1,5 @@
 import AboutBaseArticle from "./AboutBaseArticle";
-import TIPIImage from "/TIPI-image_color.svg";
+import TIPIImage from "/personality-color-image.svg";
 
 function AboutBase() {
   return (

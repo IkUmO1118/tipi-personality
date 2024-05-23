@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import Image from "/TIPI-404.svg";
+import Image from "/404-image.svg";
 import { useNavigate } from "react-router-dom";
 
 function PageNotFound() {

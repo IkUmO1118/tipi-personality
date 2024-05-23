@@ -3,7 +3,7 @@ import { FaGithub } from "react-icons/fa6";
 function CopyRight() {
   return (
     <div className="flex gap-7">
-      <span className=" font-medium text-neutral-500">
+      <span className=" text-sm font-medium text-neutral-500">
         &copy; 2024 Ikumo Takahashi All rights reserved
       </span>
       <a
@@ -12,7 +12,7 @@ function CopyRight() {
         target="_blank"
         rel="noreferrer"
       >
-        <FaGithub className="h-5 w-5 self-center text-neutral-500  transition-all duration-200 hover:scale-125" />
+        <FaGithub className="h-4 w-4 self-center text-neutral-500  transition-all duration-200 hover:scale-125" />
       </a>
     </div>
   );

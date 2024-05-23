@@ -3,13 +3,19 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 function AppLayout() {
+  const isResult: string | null = sessionStorage.getItem("result-diagnosis");
+  const styleGrid =
+    isResult !== "true"
+      ? "grid-rows-[5rem_1fr_4.9rem]"
+      : "grid-rows-[5rem_1fr]";
+
   return (
-    <div className="grid h-screen grid-rows-[5rem_auto_4.9rem]">
+    <div className={`grid h-screen ${styleGrid}`}>
       <Header />
       <main>
         <Outlet />
       </main>
-      <Footer />
+      {isResult !== "true" && <Footer />}
     </div>
   );
 }
