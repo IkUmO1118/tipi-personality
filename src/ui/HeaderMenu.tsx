@@ -1,7 +1,8 @@
+import { useGetSession } from "@/hooks/useSessions";
 import { NavLink } from "react-router-dom";
 
 function HeaderMenu() {
-  const isResult: string | null = sessionStorage.getItem("result-diagnosis");
+  const isResult = useGetSession({ key: "result-diagnosis" });
 
   return (
     <div className="flex items-center justify-center gap-5 text-neutral-800">

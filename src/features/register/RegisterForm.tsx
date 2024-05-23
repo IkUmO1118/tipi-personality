@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { useSetSession } from "@/hooks/useSessions";
 
 function RegisterForm() {
   function handleClick() {
-    sessionStorage.setItem("result-diagnosis", "true");
+    useSetSession({ key: "result-diagnosis", value: "true" });
   }
   return (
     <div>

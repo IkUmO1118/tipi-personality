@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import { useGetSession } from "@/hooks/useSessions";
 
 function AppLayout() {
-  const isResult: string | null = sessionStorage.getItem("result-diagnosis");
+  const isResult = useGetSession({ key: "result-diagnosis" });
   const styleGrid =
     isResult !== "true"
       ? "grid-rows-[5rem_1fr_4.9rem]"

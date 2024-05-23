@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import personalityImage from "/内向的.svg";
 import Progress from "./Progress";
+import { useRemoveSession } from "@/hooks/useSessions";
 
 function AboutResult() {
   return (
@@ -54,7 +55,11 @@ function AboutResult() {
             <li>○</li>
             <li>○</li>
           </ul>
-          <Button size="lg" variant="destructive">
+          <Button
+            size="lg"
+            variant="destructive"
+            onClick={() => useRemoveSession({ key: "result-diagnosis" })}
+          >
             続ける
           </Button>
         </div>
