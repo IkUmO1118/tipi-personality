@@ -1,17 +1,17 @@
 type AboutBaseArticleProps = {
   title: string;
   description: string;
-  color: string;
+  style: string;
 };
 
 function AboutBaseArticle({
   title,
   description,
-  color,
+  style,
 }: AboutBaseArticleProps) {
   return (
     <article className=" w-11/12">
-      <h2 className={`text-3xl font-bold text-${color}`}>
+      <h2 className={`text-3xl font-bold ${style}`}>
         <span className="text-6xl">{title[0]}</span>
         {title.slice(1)}
       </h2>

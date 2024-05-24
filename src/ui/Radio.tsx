@@ -1,11 +1,12 @@
 type DiagnosisRadioProps = {
   index: number;
-  size: number;
+  style: string;
   variant: string;
-  color: string;
+  onChange: () => void
+  checked: boolean;
 };
 
-function Radio({ index, size, variant, color }: DiagnosisRadioProps) {
+function Radio({ index, style, variant, onChange, checked }: DiagnosisRadioProps) {
   return (
     <li>
       <input
@@ -14,11 +15,13 @@ function Radio({ index, size, variant, color }: DiagnosisRadioProps) {
         className="peer hidden"
         id={`${variant}${index}`}
         value={index}
+        onChange={onChange}
+        checked={checked}
       />
       <label
         htmlFor={`${variant}${index}`}
-        className={`relative block h-${size} w-${size} cursor-pointer rounded-full border-2 border-${color} transition-all duration-300 
-        hover:bg-${color} peer-checked:bg-${color}`}
+        className={`${style} inline-block cursor-pointer rounded-full border-2 transition-all duration-300 
+        `}
       ></label>
     </li>
   );

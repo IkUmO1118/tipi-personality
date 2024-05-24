@@ -15,7 +15,9 @@ function Logo({ mode }: LogoProps) {
     );
 
   if (mode === "dark")
-    return <img src={darkLogo} alt="logo_dark" className="h-12" />;
+    return (
+      <img src={darkLogo} alt="logo_dark" className="flex h-12 self-start" />
+    );
 }
 
 export default Logo;
