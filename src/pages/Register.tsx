@@ -1,4 +1,4 @@
-import RegisterForm from "@/features/register/RegisterForm";
+import RegisterRight from "@/features/register/RegisterRight";
 import Logo from "@/ui/Logo";
 
 function Register() {
@@ -17,9 +17,7 @@ function Register() {
           <p className="text-sm">Sofia Davis</p>
         </article>
       </div>
-      <div className="h-full ">
-        <RegisterForm />
-      </div>
+      <RegisterRight />
     </>
   );
 }

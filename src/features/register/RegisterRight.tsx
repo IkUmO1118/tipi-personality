@@ -4,7 +4,7 @@ import { useScoresContext } from "@/contexts/scores-context";
 import { FormEvent, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function RegisterForm() {
+function RegisterRight() {
   const [email, setEmail] = useState<string>("");
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
@@ -12,6 +12,7 @@ function RegisterForm() {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
     if (!email.match(/^[a-z\d][\w.-]*@[\w.-]+\.[a-z\d]+$/i)) {
       alert("check input email address");
     } else {
@@ -32,7 +33,7 @@ function RegisterForm() {
           Emailを登録する
         </h4>
         <p className="mb-6 text-sm text-neutral-500">
-          診断テストを行うには、いかにEメールを入力してください。
+          Eメールを入力すると、あなたのパーソナリティ特性を保存できます。
         </p>
         <Input
           ref={inputRef}
@@ -43,9 +44,20 @@ function RegisterForm() {
         />
       </div>
       <Button>Sign In With Email</Button>
-      <div></div>
+      <div className="flex items-start justify-center">
+        <Button
+          size="sm"
+          variant="link"
+          onClick={() => {
+            setEmailApi("noreply@example.com");
+            navigate("/diagnosis");
+          }}
+        >
+          Emailを登録しない
+        </Button>
+      </div>
     </form>
   );
 }
 
-export default RegisterForm;
+export default RegisterRight;
