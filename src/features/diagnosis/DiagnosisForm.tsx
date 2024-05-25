@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { useScoresContext } from "@/contexts/scores-context";
 import useDiagnosisForm from "@/hooks/useDiagnosisForm";
+import { useSetSession } from "@/hooks/useSessions";
 import Radio from "@/ui/Radio";
 import { RadioButtonSizes } from "@/utils/helper";
-import { FormEvent } from "react";
+import { FormEvent, useEffect } from "react";
 
 type DiagnosisFormProps = {
   onNext: () => void;
@@ -13,13 +15,24 @@ type DiagnosisFormProps = {
 function DiagnosisForm({ onNext, onPrev, questionNumber }: DiagnosisFormProps) {
   const { selectedValue, setSelectedValue, handleSubmit } =
     useDiagnosisForm(questionNumber);
-
   const sizes = RadioButtonSizes;
+  const { scores } = useScoresContext();
 
-  function handleNext(e: FormEvent) {
+  // scoresの長さが10になる...全ての問題を回答した
+  // 今はsessionStorageに入れているが、supabaseにデータを入れる流れが必要
+  useEffect(() => {
+    if (scores.length === 10) {
+      useSetSession({
+        key: "personalityDiagnosisResult",
+        value: `${JSON.stringify(scores)}`,
+      });
+    }
+  }, [scores]);
+
+  function handleNext(e: FormEvent, isLast: boolean = false) {
     handleSubmit(e);
     setSelectedValue(null);
-    onNext();
+    if (!isLast) onNext();
   }
 
   function handlePrev(e: FormEvent) {
@@ -58,7 +71,7 @@ function DiagnosisForm({ onNext, onPrev, questionNumber }: DiagnosisFormProps) {
         {questionNumber < 9 && (
           <Button
             size="lg"
-            onClick={handleNext}
+            onClick={(e) => handleNext(e)}
             disabled={selectedValue === null}
           >
             次へ
@@ -67,7 +80,8 @@ function DiagnosisForm({ onNext, onPrev, questionNumber }: DiagnosisFormProps) {
         {questionNumber === 9 && (
           <Button
             size="lg"
-            onClick={handleNext}
+            // 以下のonClickには、スコアすべてを
+            onClick={(e) => handleNext(e, true)}
             disabled={selectedValue === null}
           >
             終了

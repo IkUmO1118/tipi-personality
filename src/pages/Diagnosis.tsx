@@ -1,10 +1,18 @@
+import { useScoresContext } from "@/contexts/scores-context";
 import { questionsData } from "@/data/data-questions";
 import DiagnosisForm from "@/features/diagnosis/DiagnosisForm";
 import Logo from "@/ui/Logo";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Diagnosis() {
   const [index, setIndex] = useState<number>(0);
+  const navigate = useNavigate();
+  const { email } = useScoresContext();
+
+  useEffect(() => {
+    if (email === "") navigate("/register");
+  }, []);
 
   return (
     <>
