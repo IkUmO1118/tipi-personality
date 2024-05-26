@@ -7,3 +7,12 @@ export const RadioButtonSizes: string[] = [
   "w-16 h-16",
   "h-20 w-20",
 ];
+
+export type KarteProps = {
+  email: string;
+  extraversion: number;
+  agreeableness: number;
+  conscientiousness: number;
+  openness: number;
+  emotionalStability: number;
+};

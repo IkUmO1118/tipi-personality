@@ -1,11 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { useScoresContext } from "@/contexts/scores-context";
 import useDiagnosisForm from "@/hooks/useDiagnosisForm";
-import { useSetSession } from "@/hooks/useSessions";
-import { RadioButtonSizes } from "@/utils/helper";
+import { KarteProps, RadioButtonSizes } from "@/utils/helper";
 import { FormEvent, useEffect } from "react";
 import DiagnosisRadioGroup from "./DiagnosisRadioGroup";
-import { useNavigate } from "react-router-dom";
+import { useCreateKarte } from "../kartes/useCreatekarte";
 
 interface DiagnosisRightProps {
   onNext: () => void;
@@ -21,19 +20,22 @@ function DiagnosisRight({
   const { selectedValue, setSelectedValue, handleSubmit } =
     useDiagnosisForm(questionNumber);
   const sizes = RadioButtonSizes;
-  const { scores } = useScoresContext();
-  const navigate = useNavigate();
+  const { scores, email } = useScoresContext();
+  const { createKarte, isCreating } = useCreateKarte();
 
   // scoresの長さが10になる...全ての問題を回答した
   // 今はsessionStorageに入れているが、supabaseにデータを入れる流れが必要
   useEffect(() => {
     if (scores.length === 10) {
-      useSetSession({
-        key: "personalityDiagnosisResult",
-        value: `${JSON.stringify(scores)}`,
-      });
-
-      navigate("/about");
+      const KarteData: KarteProps = {
+        email: `${email}`,
+        extraversion: 3,
+        agreeableness: 3,
+        conscientiousness: 3,
+        openness: 3,
+        emotionalStability: 3,
+      };
+      createKarte(KarteData);
     }
   }, [scores]);
 
