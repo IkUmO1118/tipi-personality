@@ -24,7 +24,7 @@ function DiagnosisRight({
   const { createKarte, isCreating } = useCreateKarte();
 
   // scoresの長さが10になる...全ての問題を回答した
-  // 今はsessionStorageに入れているが、supabaseにデータを入れる流れが必要
+  // 受け取ったscoreを計算して５つの項目の数値出す関数をhelper.tsに作成
   useEffect(() => {
     if (scores.length === 10) {
       const KarteData: KarteProps = {
