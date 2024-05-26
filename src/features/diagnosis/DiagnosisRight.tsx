@@ -48,6 +48,7 @@ function DiagnosisRight({
     setSelectedValue(null);
     onPrev();
   }
+
   return (
     <div className=" grid h-full grid-rows-[1fr_4rem_1fr] gap-5 p-28">
       <div className="flex items-center justify-between self-end font-mono text-xl font-semibold text-neutral-800">
