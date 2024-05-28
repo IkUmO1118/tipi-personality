@@ -6,7 +6,7 @@ type personalitySummaryProps = {
   agreeable: string;
   assertive: string;
   conscientious: string;
-  impulsive: string;
+  flexible: string;
   calm: string;
   anxious: string;
 };
@@ -26,8 +26,8 @@ export const personalitySummary: personalitySummaryProps = {
     "自己主張が強い人たちは客観性と合理性を重視し、感情よりも論理を優先する。感情を隠す傾向があり、効率性を重視する",
   conscientious:
     "誠実な人たちは、決断力があり、徹底しており、高度に組織化されている。明確さ、予測可能性、閉鎖性を重視し、自発性よりも構造と計画を好む。",
-  impulsive:
-    "衝動的な人たちは、即興でチャンスを見つけるのが得意だ。柔軟でリラックスした傾向があり、選択肢を広げておくことを好む。",
+  flexible:
+    "柔軟な人たちは、即興でチャンスを見つけるのが得意だ。柔軟でリラックスした傾向があり、選択肢を広げておくことを好む。",
   calm: "情緒が安定している人たちは、自分に自信があり、冷静でストレスに強い。心配しすぎることを嫌い、目標達成のためなら無理をしない。",
   anxious:
     "気分屋な人たちは自意識過剰で、ストレスに敏感である。さまざまな感情を経験しやすく、成功志向、完璧主義、向上心が強い。",

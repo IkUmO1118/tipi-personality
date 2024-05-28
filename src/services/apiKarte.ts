@@ -1,4 +1,4 @@
-import { KarteProps } from "@/utils/helper";
+import { KartesScoreProps } from "@/utils/helper";
 import supabase from "./supabase";
 
 export async function getKartes() {
@@ -26,7 +26,7 @@ export async function getKarte(id: number) {
   return data;
 }
 
-export async function createKarte(obj: KarteProps) {
+export async function createKarte(obj: KartesScoreProps) {
   const { data, error } = await supabase
     .from("kartes")
     .insert(obj)

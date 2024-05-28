@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useScoresContext } from "@/contexts/scores-context";
 import useDiagnosisForm from "@/hooks/useDiagnosisForm";
-import { RadioButtonSizes, calcKarte } from "@/utils/helper";
+import { RadioButtonSizes, calcKarteScore } from "@/utils/helper";
 import { FormEvent, useEffect } from "react";
 import DiagnosisRadioGroup from "./DiagnosisRadioGroup";
 import { useCreateKarte } from "../kartes/useCreatekarte";
@@ -28,8 +28,8 @@ function DiagnosisRight({
   // react query, supabaseApiを用いて、supabaseに登録
   useEffect(() => {
     if (scores.length === 10) {
-      const calcedKarte = calcKarte(scores, email);
-      createKarte(calcedKarte);
+      const calcedKarteScore = calcKarteScore(scores, email);
+      createKarte(calcedKarteScore);
     }
 
     return () => {

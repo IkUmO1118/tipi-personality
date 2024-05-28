@@ -16,7 +16,7 @@ export function useCreateKarte() {
       });
       // diagnosis後にだけ表示される画面を表示するためのsession
       useSetSession({
-        key: "inTheResult",
+        key: "inTheReport",
         value: "true",
       });
       navigate("/about");

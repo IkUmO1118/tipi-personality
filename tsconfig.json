@@ -29,7 +29,7 @@
     /* test expect module */
     "types": ["vitest/globals"]
   },
-  "include": ["src", "vitest-setup.ts"],
+  "include": ["src/**/*", "vitest-setup.ts"],
   "exclude": ["node_modules", "dist"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
