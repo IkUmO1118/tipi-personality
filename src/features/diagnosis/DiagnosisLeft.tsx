@@ -5,7 +5,7 @@ type RegisterLeftProps = {
   index: number;
 };
 
-function RegisterLeft({ index }: RegisterLeftProps) {
+function DiagnosisLeft({ index }: RegisterLeftProps) {
   return (
     <div className="grid h-full grid-rows-[1fr_4fr_auto_4fr_1fr] rounded-l-lg bg-neutral-900 px-10 py-7">
       <Logo mode="dark" />
@@ -22,4 +22,4 @@ function RegisterLeft({ index }: RegisterLeftProps) {
   );
 }
 
-export default RegisterLeft;
+export default DiagnosisLeft;

@@ -4,16 +4,21 @@ import { useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 
 export function useCreateKarte() {
-  // const queryClient = useQueryClient();
   const navigate = useNavigate();
+
   const { mutate: createKarte, isPending: isCreating } = useMutation({
     mutationFn: createKarteApi,
     onSuccess: (data) => {
+      // personality scoreをsessionに登録
       useSetSession({
         key: "personalityDiagnosisResult",
         value: `${JSON.stringify(data)}`,
       });
-      // react queryのcacheにdataを入れる方法を考える
+      // diagnosis後にだけ表示される画面を表示するためのsession
+      useSetSession({
+        key: "inTheResult",
+        value: "true",
+      });
       navigate("/about");
       console.log(data);
     },

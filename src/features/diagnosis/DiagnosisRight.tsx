@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { useScoresContext } from "@/contexts/scores-context";
 import useDiagnosisForm from "@/hooks/useDiagnosisForm";
-import { KarteProps, RadioButtonSizes } from "@/utils/helper";
+import { RadioButtonSizes, calcKarte } from "@/utils/helper";
 import { FormEvent, useEffect } from "react";
 import DiagnosisRadioGroup from "./DiagnosisRadioGroup";
 import { useCreateKarte } from "../kartes/useCreatekarte";
+import Spinner from "@/ui/Spinner";
 
 interface DiagnosisRightProps {
   onNext: () => void;
@@ -24,19 +25,16 @@ function DiagnosisRight({
   const { createKarte, isCreating } = useCreateKarte();
 
   // scoresの長さが10になる...全ての問題を回答した
-  // 受け取ったscoreを計算して５つの項目の数値出す関数をhelper.tsに作成
+  // react query, supabaseApiを用いて、supabaseに登録
   useEffect(() => {
     if (scores.length === 10) {
-      const KarteData: KarteProps = {
-        email: `${email}`,
-        extraversion: 3,
-        agreeableness: 3,
-        conscientiousness: 3,
-        openness: 3,
-        emotionalStability: 3,
-      };
-      createKarte(KarteData);
+      const calcedKarte = calcKarte(scores, email);
+      createKarte(calcedKarte);
     }
+
+    return () => {
+      console.log("Cleanup: reset the charting process");
+    };
   }, [scores]);
 
   function handleNext(e: FormEvent, isLast: boolean = false) {
@@ -51,11 +49,15 @@ function DiagnosisRight({
     onPrev();
   }
 
+  if (isCreating) {
+    return <Spinner />;
+  }
+
   return (
     <div className=" grid h-full grid-rows-[1fr_4rem_1fr] gap-5 p-28">
       <div className="flex items-center justify-between self-end font-mono text-xl font-semibold text-neutral-800">
-        <h4>同意する</h4>
         <h4>同意しない</h4>
+        <h4>同意する</h4>
       </div>
       <DiagnosisRadioGroup
         sizes={sizes}

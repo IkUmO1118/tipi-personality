@@ -41,6 +41,7 @@ function RegisterRight() {
           placeholder="name@example.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          name="registerInput"
         />
       </div>
       <Button>Sign In With Email</Button>

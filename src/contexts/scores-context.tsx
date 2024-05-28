@@ -1,13 +1,13 @@
 import { ReactNode, createContext, useContext, useReducer } from "react";
 
-type Score = {
+export type Score = {
   questionNumber: number;
   score: number;
 };
 
 export type ScoresState = {
   scores: Score[];
-  email: string | null;
+  email: string;
 };
 
 type ScoresContextValue = ScoresState & {

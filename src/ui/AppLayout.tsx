@@ -4,9 +4,8 @@ import Footer from "./Footer";
 import { useGetSession } from "@/hooks/useSessions";
 
 function AppLayout() {
-  const isResult =
-    useGetSession({ key: "personalityDiagnosisResult" }) !== null;
-  const styleGrid = !isResult
+  const isResult = useGetSession("inTheResult") === "null";
+  const styleGrid = isResult
     ? "grid-rows-[5rem_1fr_4.9rem]"
     : "grid-rows-[5rem_1fr]";
 
@@ -16,7 +15,7 @@ function AppLayout() {
       <main>
         <Outlet />
       </main>
-      {!isResult && <Footer />}
+      {isResult && <Footer />}
     </div>
   );
 }

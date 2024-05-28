@@ -5,7 +5,22 @@ export async function getKartes() {
   const { data, error } = await supabase.from("kartes").select("*");
   if (error) {
     console.log(error);
-    throw new Error("Users could not be loaded");
+    throw new Error("Kartes could not be loaded");
+  }
+
+  return data;
+}
+
+export async function getKarte(id: number) {
+  const { data, error } = await supabase
+    .from("kartes")
+    .select("*")
+    .eq("id", id)
+    .single();
+
+  if (error) {
+    console.error(error);
+    throw new Error("Karte could not be loaded");
   }
 
   return data;

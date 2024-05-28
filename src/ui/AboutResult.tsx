@@ -1,38 +1,97 @@
 import { Button } from "@/components/ui/button";
-import personalityImage from "/personality/内向的.svg";
+// import personalityImage from "/personality/内向的.svg";
 import Progress from "./Progress";
-import { useRemoveSession } from "@/hooks/useSessions";
+import { useGetSession } from "@/hooks/useSessions";
+import { KartesType, PersonalityProps, transformKarte } from "@/utils/helper";
+import { useState } from "react";
+import { personalitySummary } from "@/data/data-personality";
+
+const kartesHash: { [key: number]: keyof KartesType } = {
+  0: "extraversion",
+  1: "agreeableness",
+  2: "conscientiousness",
+  3: "openness",
+  4: "emotionalStability",
+};
 
 function AboutResult() {
+  const [openId, setOpenId] = useState<number>(0);
+  const karteData = useGetSession("personalityDiagnosisResult");
+
+  const karte = JSON.parse(karteData!);
+  const transformedKarte: KartesType = transformKarte(
+    karte as PersonalityProps,
+  );
+
+  const {
+    // score,
+    per,
+    type,
+    positiveType,
+    negativeType,
+    primaryColorBg,
+    primaryColorText,
+    secondaryColor,
+    title,
+  } = transformedKarte[kartesHash[openId]];
+
+  const isPositive = type === positiveType;
+
   return (
-    <div className="h-full bg-sky-200 py-10">
+    <div className={`h-full ${secondaryColor} py-10`}>
       <section className="mx-auto flex h-full  w-8/12 flex-col overflow-hidden rounded-xl bg-white shadow-2xl">
-        <div className="flex h-44 items-center justify-center bg-cyan-600 text-2xl font-bold text-white">
-          <h2 className="mb-4">エネルギー</h2>
+        <div
+          className={`flex h-44 items-center justify-center ${primaryColorBg} text-2xl font-bold text-white`}
+        >
+          <h2 className="mb-4">{title}</h2>
         </div>
         <div className="flex h-full gap-16 px-20">
           <img
-            src={personalityImage}
+            src={"/personality/内向的.svg"}
             alt="女性が丘の上で、本を読んでいる"
             className=" w-4/12"
           />
           <div className="my-auto flex w-full flex-col gap-6">
             <h2 className="text-4xl font-medium text-neutral-800">
-              58% 内向型
+              {isPositive ? per : 100 - per}% {type}
             </h2>
             <div className="flex h-20 flex-col">
-              <Progress value={58} color="cyan-600" />
+              <Progress
+                value={isPositive ? per : 100 - per}
+                color={primaryColorBg.slice(3)}
+                style={isPositive ? "" : "justify-end"}
+              />
               <div className="mt-3 flex justify-between text-xl font-bold">
-                <div>42%</div>
-                <div className="text-cyan-600">58%</div>
+                <div
+                  className={isPositive ? primaryColorText : "text-neutral-800"}
+                >
+                  {per}%
+                </div>
+                <div
+                  className={
+                    !isPositive ? primaryColorText : "text-neutral-800"
+                  }
+                >
+                  {100 - per}%
+                </div>
               </div>
               <div className="flex justify-between text-sm font-bold">
-                <div className="text-neutral-500">計画型</div>
-                <div className="text-cyan-600">探索型</div>
+                <div
+                  className={isPositive ? primaryColorText : "text-neutral-500"}
+                >
+                  {positiveType}
+                </div>
+                <div
+                  className={
+                    !isPositive ? primaryColorText : "text-neutral-500"
+                  }
+                >
+                  {negativeType}
+                </div>
               </div>
             </div>
             <p className=" text-lg  text-neutral-800">
-              誠実性のスコアが高い人には「計画性がある」「規律正しい」「注意深い」「忍耐強い」「賢明」「非衝動的」などの特性が見られます。また勉強や仕事の成績高い傾向があり、生涯を通じて健康にいい習慣(歯磨き・運動など)を保つ傾向があります。
+              {personalitySummary[type]}
             </p>
           </div>
         </div>
@@ -43,6 +102,10 @@ function AboutResult() {
               variant="link"
               size="sm"
               className="justify-start text-cyan-700"
+              onClick={() => {
+                if (openId > 0) setOpenId((i) => i - 1);
+              }}
+              disabled={openId === 0}
             >
               戻る
             </Button>
@@ -58,9 +121,9 @@ function AboutResult() {
           <Button
             size="lg"
             variant="destructive"
-            onClick={() =>
-              useRemoveSession({ key: "personalityDiagnosisResult" })
-            }
+            onClick={() => {
+              if (openId < 4) setOpenId((i) => i + 1);
+            }}
           >
             続ける
           </Button>

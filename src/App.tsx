@@ -1,6 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import AppMainLayout from "./ui/AppMainLayout";
+import AppLayout from "./ui/AppLayout";
 import PageNotFound from "./pages/PageNotFound";
 import Register from "./pages/Register";
 import Diagnosis from "./pages/Diagnosis";
@@ -10,7 +10,6 @@ import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Testimonials from "./pages/Testimonials";
 import ScoresContextProvider from "./contexts/scores-context";
-import AppSubLayout from "./ui/AppSubLayout";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
@@ -29,7 +28,7 @@ function App() {
       <ScoresContextProvider>
         <BrowserRouter>
           <Routes>
-            <Route element={<AppMainLayout />}>
+            <Route element={<AppLayout />}>
               <Route index element={<Navigate replace to="home" />} />
               <Route path="home" element={<Home />} />
               <Route path="about" element={<About />} />
@@ -40,10 +39,8 @@ function App() {
               <Route path="*" element={<PageNotFound />} />
             </Route>
 
-            <Route element={<AppSubLayout />}>
-              <Route path="register" element={<Register />} />
-              <Route path="diagnosis" element={<Diagnosis />} />
-            </Route>
+            <Route path="register" element={<Register />} />
+            <Route path="diagnosis" element={<Diagnosis />} />
           </Routes>
         </BrowserRouter>
       </ScoresContextProvider>

@@ -3,7 +3,7 @@ import Logo from "@/ui/Logo";
 
 function Register() {
   return (
-    <>
+    <main className="grid h-screen grid-cols-2 p-3">
       <div className="flex h-full flex-col justify-between rounded-l-lg bg-neutral-900 px-10 py-7">
         <div className="items-start">
           <Logo mode="dark" />
@@ -18,7 +18,7 @@ function Register() {
         </article>
       </div>
       <RegisterRight />
-    </>
+    </main>
   );
 }
 

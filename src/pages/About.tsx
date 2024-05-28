@@ -3,14 +3,12 @@ import AboutBase from "@/ui/AboutBase";
 import AboutResult from "@/ui/AboutResult";
 
 function About() {
-  const isResult =
-    useGetSession({ key: "personalityDiagnosisResult" }) !== null;
+  const isResult = useGetSession("inTheResult") === "true";
+  // sessionの'inTheResult' === 'true'の場合
+  if (isResult) return <AboutResult />;
 
-  // if sessionにresultがなかった場合
-  if (!isResult) return <AboutBase />;
-
-  // if sessionにresultがあった場合
-  return <AboutResult />;
+  // sessionの'inTheResult' !== 'true'の場合
+  return <AboutBase />;
 }
 
 export default About;
