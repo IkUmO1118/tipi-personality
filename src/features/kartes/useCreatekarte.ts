@@ -11,7 +11,7 @@ export function useCreateKarte() {
     onSuccess: (data) => {
       // personality scoreをsessionに登録
       useSetSession({
-        key: "personalityDiagnosisResult",
+        key: "diagnosis-result",
         value: `${JSON.stringify(data)}`,
       });
       // diagnosis後にだけ表示される画面を表示するためのsession
@@ -20,7 +20,6 @@ export function useCreateKarte() {
         value: "true",
       });
       navigate("/about");
-      console.log(data);
     },
     onError: (err) => console.error(err.message),
   });

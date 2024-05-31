@@ -1,9 +1,7 @@
+import ResultContainer from "@/features/result/ResultContainer";
+
 function Result() {
-  return (
-    <div>
-      <h1>Result page</h1>
-    </div>
-  );
+  return <ResultContainer />;
 }
 
 export default Result;

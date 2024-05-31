@@ -1,4 +1,4 @@
-type personalitySummaryProps = {
+export type personalitySummaryProps = {
   extravert: string;
   introvert: string;
   openMinded: string;

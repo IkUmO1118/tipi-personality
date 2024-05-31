@@ -1,4 +1,5 @@
 import { Score } from "@/contexts/scores-context";
+import { personalitySummary } from "@/data/data-personality";
 
 export const RadioButtonSizes: string[] = [
   "h-20 w-20",
@@ -36,3 +37,22 @@ export function calcKarteScore(arr: Score[], email: string): KartesScoreProps {
     emotionalStability: (scoresArr[8] + (8 - scoresArr[3])) / 2,
   };
 }
+
+export type KarteProps = {
+  score: number;
+  per: number;
+  type: keyof typeof personalitySummary;
+  positive: string[];
+  negative: string[];
+  primaryColor: { bg: string; text: string };
+  secondaryColor: string;
+  title: string[];
+};
+
+export type KartesProps = {
+  extraversion: KarteProps;
+  agreeableness: KarteProps;
+  conscientiousness: KarteProps;
+  openness: KarteProps;
+  emotionalStability: KarteProps;
+};

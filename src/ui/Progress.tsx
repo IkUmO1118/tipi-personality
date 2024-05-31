@@ -7,9 +7,12 @@ type ProgressProps = {
 function Progress({ value, color, style }: ProgressProps) {
   return (
     <div
-      className={`flex h-2 w-full ${style} overflow-hidden rounded-full bg-neutral-200`}
+      className={`flex ${style} overflow-hidden rounded-full bg-neutral-200`}
     >
-      <div style={{ width: `${value}%` }} className={`bg-${color}`}></div>
+      <div
+        style={{ width: `${value}%` }}
+        className={`${color} rounded-full`}
+      ></div>
     </div>
   );
 }

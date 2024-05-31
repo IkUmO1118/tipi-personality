@@ -27,11 +27,7 @@ export async function getKarte(id: number) {
 }
 
 export async function createKarte(obj: KartesScoreProps) {
-  const { data, error } = await supabase
-    .from("kartes")
-    .insert(obj)
-    .select()
-    .single();
+  const { data, error } = await supabase.from("kartes").insert(obj).select();
 
   if (error) {
     console.error(error);

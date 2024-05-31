@@ -2,7 +2,7 @@ import { useGetSession } from "@/hooks/useSessions";
 import { NavLink } from "react-router-dom";
 
 function HeaderMenu() {
-  const isResult = useGetSession("inTheReport") === "true";
+  const isResult = useGetSession("diagnosis-result") !== null;
 
   return (
     <div className="flex items-center justify-center gap-5 text-neutral-800">
