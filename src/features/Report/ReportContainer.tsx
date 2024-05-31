@@ -1,12 +1,14 @@
-import { useGetSession, useSetSession } from "@/hooks/useSessions";
-import { KartesProps, KartesScoreProps } from "@/utils/helper";
 import { useState } from "react";
+
+import { useGetSession } from "@/hooks/useSessions";
+import { useSetLocalStorage } from "@/hooks/useLocalStorage";
+import { KartesProps, KartesScoreProps } from "@/utils/helper";
 import { personalitySummary } from "@/data/data-personality";
 import { transformKarte } from "@/hooks/useTransformKarte";
 import ReportNavigation from "./ReportNavigation";
 import ReportProgressSection from "./ReportProgressSection";
 
-const kartesHash: { [key: number]: keyof KartesProps } = {
+export const kartesHash: { [key: number]: keyof KartesProps } = {
   0: "extraversion",
   1: "agreeableness",
   2: "conscientiousness",
@@ -23,7 +25,7 @@ function ReportContainer() {
     kartes[0] as KartesScoreProps,
   );
 
-  useSetSession({
+  useSetLocalStorage({
     key: "kartes-data",
     value: JSON.stringify(transformedKarte),
   });
@@ -34,10 +36,12 @@ function ReportContainer() {
   const isPositive = type === positive[0];
 
   return (
-    <div className={`h-full ${secondaryColor} py-10`}>
+    <div
+      className={`h-full transition-all duration-150 ${secondaryColor} py-10`}
+    >
       <section className="mx-auto flex h-full  w-8/12 flex-col overflow-hidden rounded-xl bg-white shadow-2xl">
         <div
-          className={`flex h-44 items-center justify-center ${primaryColor.bg} text-2xl font-bold text-white`}
+          className={`flex h-44 items-center justify-center ${primaryColor.bg} text-2xl font-bold text-white transition-all duration-150`}
         >
           <h2 className="mb-4">{title[1]}</h2>
         </div>

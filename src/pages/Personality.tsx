@@ -1,14 +1,14 @@
 import { useGetSession } from "@/hooks/useSessions";
-import AboutBase from "@/ui/AboutBase";
 import Report from "@/pages/Report";
+import PersonalityBase from "@/ui/PersonalityBase";
 
-function About() {
+function Personality() {
   const isResult = useGetSession("inTheReport") === "true";
   // sessionの'inTheReport' === 'true'の場合
   if (isResult) return <Report />;
 
   // sessionの'inTheReport' !== 'true'の場合
-  return <AboutBase />;
+  return <PersonalityBase />;
 }
 
-export default About;
+export default Personality;

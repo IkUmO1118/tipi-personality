@@ -19,7 +19,7 @@ export function useCreateKarte() {
         key: "inTheReport",
         value: "true",
       });
-      navigate("/about");
+      navigate("/personality");
     },
     onError: (err) => console.error(err.message),
   });

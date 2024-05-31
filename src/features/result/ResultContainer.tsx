@@ -1,8 +1,9 @@
-import { useGetSession } from "@/hooks/useSessions";
-import ResultProgressArticle from "./ResultProgressArticle";
 import { useState } from "react";
 import { KarteProps, KartesProps } from "@/utils/helper";
 import ResultCard from "./ResultCard";
+import { useGetLocalStorage } from "@/hooks/useLocalStorage";
+import ResultProgressSection from "./ResultProgressSection";
+import { kartesHash } from "../Report/ReportContainer";
 
 function ResultContainer() {
   const {
@@ -11,8 +12,8 @@ function ResultContainer() {
     conscientiousness,
     openness,
     emotionalStability,
-  }: KartesProps = JSON.parse(useGetSession("kartes-data"));
-  const [selected, setSelected] = useState<KarteProps>(extraversion);
+  }: KartesProps = JSON.parse(useGetLocalStorage("kartes-data")!);
+  const [selectedData, setSelectedData] = useState<KarteProps>(extraversion);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
   return (
@@ -28,107 +29,33 @@ function ResultContainer() {
 
         <div className="flex flex-1">
           <div className="grid flex-1 grid-rows-5 py-5 pl-5">
-            {/* 以下のResultProgressArticleを一つのcomponentにまとめ、roopにてまとめたい */}
-            <div
-              className={`cursor-pointer rounded-l-lg  ${selectedIndex === 0 && "bg-neutral-100"}`}
-              onMouseEnter={() => {
-                setSelectedIndex(0);
-                setSelected(extraversion);
-              }}
-            >
-              <ResultProgressArticle
-                title={extraversion.title[0]}
-                primaryText={extraversion.primaryColor.text}
-                primaryBg={extraversion.primaryColor.bg}
-                per={extraversion.per}
-                positive={extraversion.positive[1]}
-                negative={extraversion.negative[1]}
-                isPositive={extraversion.type === extraversion.positive[0]}
+            {[
+              extraversion,
+              agreeableness,
+              conscientiousness,
+              openness,
+              emotionalStability,
+            ].map((type, i) => (
+              <ResultProgressSection
+                type={type}
+                index={i}
+                key={i}
+                selectedIndex={selectedIndex}
+                setSelectedIndex={setSelectedIndex}
+                setSelectedData={setSelectedData}
               />
-            </div>
-            <div
-              className={`cursor-pointer rounded-l-lg hover:bg-neutral-100 ${selectedIndex === 1 && "bg-neutral-100"}`}
-              onMouseEnter={() => {
-                setSelected(openness);
-                setSelectedIndex(1);
-              }}
-            >
-              <ResultProgressArticle
-                title={openness.title[0]}
-                primaryText={openness.primaryColor.text}
-                primaryBg={openness.primaryColor.bg}
-                per={openness.per}
-                positive={openness.positive[1]}
-                negative={openness.negative[1]}
-                isPositive={openness.type === openness.positive[0]}
-              />
-            </div>
-            <div
-              className={`cursor-pointer rounded-l-lg hover:bg-neutral-100 ${selectedIndex === 2 && "bg-neutral-100"}`}
-              onMouseEnter={() => {
-                setSelected(agreeableness);
-                setSelectedIndex(2);
-              }}
-            >
-              <ResultProgressArticle
-                title={agreeableness.title[0]}
-                primaryText={agreeableness.primaryColor.text}
-                primaryBg={agreeableness.primaryColor.bg}
-                per={agreeableness.per}
-                positive={agreeableness.positive[1]}
-                negative={agreeableness.negative[1]}
-                isPositive={agreeableness.type === agreeableness.positive[0]}
-              />
-            </div>
-            <div
-              className={`cursor-pointer rounded-l-lg hover:bg-neutral-100 ${selectedIndex === 3 && "bg-neutral-100"}`}
-              onMouseEnter={() => {
-                setSelected(conscientiousness);
-                setSelectedIndex(3);
-              }}
-            >
-              <ResultProgressArticle
-                title={conscientiousness.title[0]}
-                primaryText={conscientiousness.primaryColor.text}
-                primaryBg={conscientiousness.primaryColor.bg}
-                per={conscientiousness.per}
-                positive={conscientiousness.positive[1]}
-                negative={conscientiousness.negative[1]}
-                isPositive={
-                  conscientiousness.type === conscientiousness.positive[0]
-                }
-              />
-            </div>
-            <div
-              className={`cursor-pointer rounded-l-lg hover:bg-neutral-100 ${selectedIndex === 4 && "bg-neutral-100"}`}
-              onMouseEnter={() => {
-                setSelected(emotionalStability);
-                setSelectedIndex(4);
-              }}
-            >
-              {" "}
-              <ResultProgressArticle
-                title={emotionalStability.title[0]}
-                primaryText={emotionalStability.primaryColor.text}
-                primaryBg={emotionalStability.primaryColor.bg}
-                per={emotionalStability.per}
-                positive={emotionalStability.positive[1]}
-                negative={emotionalStability.negative[1]}
-                isPositive={
-                  emotionalStability.type === emotionalStability.positive[0]
-                }
-              />
-            </div>
+            ))}
           </div>
 
           <ResultCard
-            type={selected?.type}
-            title={selected?.title[0]}
-            per={selected?.per}
-            positive={selected?.positive[1]}
-            negative={selected?.negative[1]}
-            isPositive={selected?.type === selected?.positive[0]}
-            primaryColorText={selected?.primaryColor.text}
+            personality={kartesHash[selectedIndex]}
+            type={selectedData?.type}
+            title={selectedData?.title[0]}
+            per={selectedData?.per}
+            positive={selectedData?.positive[1]}
+            negative={selectedData?.negative[1]}
+            isPositive={selectedData?.type === selectedData?.positive[0]}
+            primaryColorText={selectedData?.primaryColor.text}
           />
         </div>
       </div>

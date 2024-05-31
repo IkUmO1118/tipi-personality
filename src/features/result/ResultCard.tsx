@@ -2,6 +2,7 @@ import { personalitySummary } from "@/data/data-personality";
 import { NavLink } from "react-router-dom";
 
 type ResultCartProps = {
+  personality: string;
   type: keyof typeof personalitySummary;
   title: string;
   per: number;
@@ -12,6 +13,7 @@ type ResultCartProps = {
 };
 
 function ResultCard({
+  personality,
   type,
   title,
   per,
@@ -33,7 +35,10 @@ function ResultCard({
         alt="personality image"
       />
       <p className="text-base">{personalitySummary[type]}</p>
-      <NavLink className="mt-auto self-start text-cyan-600" to="/about">
+      <NavLink
+        className="mt-auto self-start text-cyan-600"
+        to={`/personality/${personality}`}
+      >
         より詳しく &rarr;
       </NavLink>
     </div>
