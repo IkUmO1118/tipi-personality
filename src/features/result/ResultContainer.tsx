@@ -28,6 +28,7 @@ function ResultContainer() {
 
         <div className="flex flex-1">
           <div className="grid flex-1 grid-rows-5 py-5 pl-5">
+            {/* 以下のResultProgressArticleを一つのcomponentにまとめ、roopにてまとめたい */}
             <div
               className={`cursor-pointer rounded-l-lg  ${selectedIndex === 0 && "bg-neutral-100"}`}
               onMouseEnter={() => {

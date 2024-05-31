@@ -1,8 +1,6 @@
 # Ten Item Personality Inventory
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
+このアプリでは、「10項目性格インベントリ（Ten Item Personality Inventory, TIPI）」という心理学的研究に基づいた性格診断を行います。TIPIは、あなたの性格を短時間で簡単に評価するための信頼性の高い方法です。
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
@@ -25,6 +23,5 @@ export default {
 };
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- sessionStorageがなかった際(存在するurlに飛べたが、sessionStorageに予期したkeyが存在しなかった)、navigate('/home')に飛ばすなどの動作
+- 画像読み込みの最適化

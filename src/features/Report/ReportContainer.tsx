@@ -28,16 +28,8 @@ function ReportContainer() {
     value: JSON.stringify(transformedKarte),
   });
 
-  const {
-    // score,
-    per,
-    type,
-    positive,
-    negative,
-    primaryColor,
-    secondaryColor,
-    title,
-  } = transformedKarte[kartesHash[openId]];
+  const { per, type, positive, negative, primaryColor, secondaryColor, title } =
+    transformedKarte[kartesHash[openId]];
 
   const isPositive = type === positive[0];
 
