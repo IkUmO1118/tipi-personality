@@ -37,22 +37,6 @@ function App() {
                 path="personality/:personalityId"
                 element={<PersonalityDetails />}
               />
-              {/* <Route
-                path="personality/:agreeableness"
-                element={<PersonalityDetails />}
-              />
-              <Route
-                path="personality/:conscientiousness"
-                element={<PersonalityDetails />}
-              />
-              <Route
-                path="personality/:openness"
-                element={<PersonalityDetails />}
-              />
-              <Route
-                path="personality/:emotionalStability"
-                element={<PersonalityDetails />}
-              /> */}
               <Route path="Result" element={<Result />} />
               <Route path="contact" element={<Contact />} />
               <Route path="privacy" element={<PrivacyPolicy />} />
