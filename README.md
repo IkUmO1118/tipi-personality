@@ -30,3 +30,4 @@ export default {
 - ~~session(local)Storageが存在しても、再診断を行えるようにremoveする~~
 - ~~localStorage (useGetLocalStorageKart)の整理~~
 - Karteとdiagnosis-resultの整理(診断直後とそれ以降で名称が変更されるのは不自然)
+- ~~名言apiの使用と適用~~

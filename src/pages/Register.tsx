@@ -1,7 +1,10 @@
 import RegisterRight from "@/features/register/RegisterRight";
+import { useQuote } from "@/features/register/useQuote";
 import Logo from "@/ui/Logo";
+import SpinnerMini from "@/ui/SpinnerMini";
 
 function Register() {
+  const { data, isLoading } = useQuote();
   return (
     <main className="grid h-screen grid-cols-2 p-3">
       <div className="flex h-full flex-col justify-between rounded-l-lg bg-neutral-900 px-10 py-7">
@@ -9,12 +12,16 @@ function Register() {
           <Logo mode="dark" />
         </div>
         <article className="flex flex-col gap-2 text-white">
-          <h4 className="text-lg font-medium">
-            &#34;This library has saved me countless hours of work and helped me
-            deliver stunning designs to my clients faster than ever
-            before.&rdquo;
-          </h4>
-          <p className="text-sm">Sofia Davis</p>
+          {isLoading ? (
+            <SpinnerMini />
+          ) : (
+            <>
+              <h4 className="text-lg font-medium">
+                &#34;{data?.content}&rdquo;
+              </h4>
+              <p className="text-sm">{data?.authorSlug}</p>
+            </>
+          )}
         </article>
       </div>
       <RegisterRight />
