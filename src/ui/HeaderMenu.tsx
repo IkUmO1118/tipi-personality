@@ -1,8 +1,8 @@
-import { useGetLocalStorageKartes } from "@/hooks/useLocalStorage";
+import { useGetLocalStorage } from "@/hooks/useLocalStorage";
 import { NavLink } from "react-router-dom";
 
 function HeaderMenu() {
-  const isResult = useGetLocalStorageKartes() !== null;
+  const isResult = useGetLocalStorage("kartes-data") !== null;
 
   return (
     <div className="flex items-center justify-center gap-5 text-neutral-800">

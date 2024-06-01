@@ -7,7 +7,6 @@ import { personalitySummary } from "@/data/data-personality";
 import { transformKarte } from "@/hooks/useTransformKarte";
 import ReportNavigation from "./ReportNavigation";
 import ReportProgressSection from "./ReportProgressSection";
-import { addMonths } from "date-fns";
 
 export const kartesHash: { [key: number]: keyof KartesProps } = {
   0: "extraversion",
@@ -31,7 +30,7 @@ function ReportContainer() {
     key: "kartes-data",
     value: JSON.stringify({
       value: transformedKarte,
-      timeStamp: addMonths(new Date(), 1).getTime(),
+      timeStamp: new Date(),
     }),
   });
 
@@ -42,9 +41,9 @@ function ReportContainer() {
 
   return (
     <div
-      className={`h-full transition-all duration-150 ${secondaryColor} py-10`}
+      className={`flex h-full transition-all duration-150 ${secondaryColor}`}
     >
-      <section className="mx-auto flex h-full  w-8/12 flex-col overflow-hidden rounded-xl bg-white shadow-2xl">
+      <section className="mx-auto flex h-3/4 w-8/12 flex-col self-center  overflow-hidden rounded-xl bg-white shadow-2xl">
         <div
           className={`flex h-44 items-center justify-center ${primaryColor.bg} text-2xl font-bold text-white transition-all duration-150`}
         >
@@ -52,7 +51,7 @@ function ReportContainer() {
         </div>
         <div className="flex h-full gap-16 px-20">
           <img
-            src={`/public/personality/${type}.svg`}
+            src={`/personality/${type}.svg`}
             alt={`${type} images`}
             className="w-4/12"
           />

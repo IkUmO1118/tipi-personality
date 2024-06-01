@@ -1,18 +1,19 @@
 import { useState } from "react";
 import { KarteProps, KartesProps } from "@/utils/helper";
 import ResultCard from "./ResultCard";
-import { useGetLocalStorageKartes } from "@/hooks/useLocalStorage";
+import { useGetLocalStorage } from "@/hooks/useLocalStorage";
 import ResultProgressSection from "./ResultProgressSection";
 import { kartesHash } from "../Report/ReportContainer";
 
 function ResultContainer() {
+  const kartesData = JSON.parse(useGetLocalStorage("kartes-data")!);
   const {
     extraversion,
     agreeableness,
     conscientiousness,
     openness,
     emotionalStability,
-  }: KartesProps = useGetLocalStorageKartes();
+  }: KartesProps = kartesData.value;
   const [selectedData, setSelectedData] = useState<KarteProps>(extraversion);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
 

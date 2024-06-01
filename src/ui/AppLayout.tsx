@@ -11,7 +11,7 @@ function AppLayout() {
 
   return (
     <div className={`grid h-screen ${styleGrid}`}>
-      <Header />
+      {<Header />}
       <main>
         <Outlet />
       </main>

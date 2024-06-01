@@ -1,16 +1,10 @@
 import ResultContainer from "@/features/result/ResultContainer";
-import { useCheckCookieExpiration } from "@/hooks/useCheckCookieExpiration";
-import { useGetLocalStorageKartes } from "@/hooks/useLocalStorage";
+import { useGetLocalStorage } from "@/hooks/useLocalStorage";
+import KartesNotFound from "@/ui/KartesNotFound";
 
 function Result() {
-  useCheckCookieExpiration();
-  const kartesData = useGetLocalStorageKartes();
-  if (!kartesData)
-    return (
-      <div className="flex h-full items-center justify-center text-2xl">
-        診断結果が見つかりません。もう一度性格診断テストを受けてください
-      </div>
-    );
+  const kartesData = useGetLocalStorage("kartes-data");
+  if (!kartesData) return <KartesNotFound />;
 
   return <ResultContainer />;
 }
