@@ -3,8 +3,8 @@ import { useGetLocalStorage } from "@/hooks/useLocalStorage";
 import KartesNotFound from "@/ui/KartesNotFound";
 
 function Result() {
-  const kartesData = useGetLocalStorage("kartes-data");
-  if (!kartesData) return <KartesNotFound />;
+  const isKartesData = useGetLocalStorage("kartes-data") !== null;
+  if (!isKartesData) return <KartesNotFound />;
 
   return <ResultContainer />;
 }

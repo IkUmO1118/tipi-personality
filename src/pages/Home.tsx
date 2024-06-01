@@ -1,13 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { useGetLocalStorage } from "@/hooks/useLocalStorage";
-import KartesNotFound from "@/ui/KartesNotFound";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
   const isKartesData = useGetLocalStorage("kartes-data") !== null;
-
-  if (isKartesData) return <KartesNotFound />;
 
   return (
     <div className="mx-auto flex flex-col items-center gap-6 py-32 text-neutral-800">
