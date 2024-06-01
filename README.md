@@ -24,9 +24,9 @@ export default {
 ```
 
 - ~~sessionStorageがなかった際(存在するurlに飛べたが、sessionStorageに予期したkeyが存在しなかった)、navigate('/home')に飛ばすなどの動作~~
-- LocalStorageのexpireを決め、useEffectをApp.tsx?に設定
-- 画像読み込みの最適化
+- 画像読み込みの最適化(画像をpathを用いてrenderする　→ mapにてあらかじめpageを作成して、indexを用いて表示非表示を操作する)
 - ~~ResultContainer.tsxのrefactoring~~
 - 性格特性の組み合わせから得られる、傾向や向いている職、具体的な要素など
 - ~~session(local)Storageが存在しても、再診断を行えるようにremoveする~~
-- localStorage (useGetLocalStorageKart)の整理
+- ~~localStorage (useGetLocalStorageKart)の整理~~
+- Karteとdiagnosis-resultの整理(診断直後とそれ以降で名称が変更されるのは不自然)
