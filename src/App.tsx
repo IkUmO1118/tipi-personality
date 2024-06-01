@@ -17,7 +17,7 @@ import PersonalityDetails from "./pages/PersonalityDetails";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 0,
+      staleTime: Infinity,
     },
   },
 });

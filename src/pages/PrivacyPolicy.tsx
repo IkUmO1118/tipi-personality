@@ -8,8 +8,8 @@ function Privacy() {
           このポリシーは、収集する情報、利用方法、およびその情報に関する選択肢を理解しやすくするために、できるだけシンプルで法的な表現を避けています。このポリシー全体をお読みください。ここでは、重要なポイントを簡単にまとめています。
         </p>
       </article>
-      <ol className="flex flex-col gap-6">
-        <li className="border-t pt-12">
+      <ol className="flex flex-col gap-9 divide-y px-6">
+        <li className="pt-12">
           <article className="flex flex-col">
             <h4 className="text-2xl font-medium">1.個人データの販売について</h4>
             <p className="text-lg">
@@ -17,7 +17,7 @@ function Privacy() {
             </p>
           </article>
         </li>
-        <li className="border-t pt-12">
+        <li className="pt-9">
           <article className="flex flex-col">
             <h4 className="text-2xl font-medium">2.情報の収集</h4>
             <p className="text-lg">
@@ -25,7 +25,7 @@ function Privacy() {
             </p>
           </article>
         </li>
-        <li className="border-t pt-12">
+        <li className="pt-9">
           <article className="flex flex-col">
             <h4 className="text-2xl font-medium">3.自動データ収集</h4>
             <p className="text-lg">
@@ -33,15 +33,15 @@ function Privacy() {
             </p>
           </article>
         </li>
-        <li className="border-t pt-12">
+        <li className="pt-9">
           <article className="flex flex-col">
-            <h4 className="text-2xl font-medium">4ユーザーの選択と管理</h4>
+            <h4 className="text-2xl font-medium">4.ユーザーの選択と管理</h4>
             <p className="text-lg">
               ニュースレターの購読を選択したり、アカウント情報を更新したり、アカウントを完全に削除することができます。また、提出した情報のコピーを要求することも可能です。
             </p>
           </article>
         </li>
-        <li className="border-t pt-12">
+        <li className="pt-9">
           <article className="flex flex-col">
             <h4 className="text-2xl font-medium">5.調査やテストデータの利用</h4>
             <p className="text-lg">
@@ -49,7 +49,7 @@ function Privacy() {
             </p>
           </article>
         </li>
-        <li className="border-t pt-12">
+        <li className="pt-9">
           <article className="flex flex-col">
             <h4 className="text-2xl font-medium">6.データのセキュリティ</h4>
             <p className="text-lg">
@@ -57,7 +57,7 @@ function Privacy() {
             </p>
           </article>
         </li>
-        <li className="border-t pt-12">
+        <li className="pt-9">
           <article className="flex flex-col">
             <h4 className="text-2xl font-medium">7.外部リンク</h4>
             <p className="text-lg">
@@ -65,7 +65,7 @@ function Privacy() {
             </p>
           </article>
         </li>
-        <li className="border-t pt-12">
+        <li className="pt-9">
           <article className="flex flex-col">
             <h4 className="text-2xl font-medium">8.ポリシーの更新</h4>
             <p className="text-lg">
@@ -73,7 +73,7 @@ function Privacy() {
             </p>
           </article>
         </li>
-        <li className="border-t pt-12">
+        <li className="pt-9">
           <article className="flex flex-col">
             <h4 className="text-2xl font-medium">9.お問い合わせ</h4>
             <p className="text-lg">
