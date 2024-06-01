@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { useGetLocalStorage } from "@/hooks/useLocalStorage";
+import { useGetLocalStorageKartes } from "@/hooks/useLocalStorage";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
-  const isKartesData = useGetLocalStorage("kartes-data") !== null;
+  const isKartesData = useGetLocalStorageKartes() !== null;
 
   return (
     <div className="mx-auto flex flex-col items-center gap-6 py-32 text-neutral-800">

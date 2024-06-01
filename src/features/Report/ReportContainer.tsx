@@ -7,6 +7,7 @@ import { personalitySummary } from "@/data/data-personality";
 import { transformKarte } from "@/hooks/useTransformKarte";
 import ReportNavigation from "./ReportNavigation";
 import ReportProgressSection from "./ReportProgressSection";
+import { addMonths } from "date-fns";
 
 export const kartesHash: { [key: number]: keyof KartesProps } = {
   0: "extraversion",
@@ -25,9 +26,13 @@ function ReportContainer() {
     kartes[0] as KartesScoreProps,
   );
 
+  // localStorageに新たなkartes-dataを登録
   useSetLocalStorage({
     key: "kartes-data",
-    value: JSON.stringify(transformedKarte),
+    value: JSON.stringify({
+      value: transformedKarte,
+      timeStamp: addMonths(new Date(), 1).getTime(),
+    }),
   });
 
   const { per, type, positive, negative, primaryColor, secondaryColor, title } =

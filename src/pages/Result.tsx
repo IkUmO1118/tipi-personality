@@ -1,8 +1,10 @@
 import ResultContainer from "@/features/result/ResultContainer";
-import { useGetLocalStorage } from "@/hooks/useLocalStorage";
+import { useCheckCookieExpiration } from "@/hooks/useCheckCookieExpiration";
+import { useGetLocalStorageKartes } from "@/hooks/useLocalStorage";
 
 function Result() {
-  const kartesData = useGetLocalStorage("kartes-data");
+  useCheckCookieExpiration();
+  const kartesData = useGetLocalStorageKartes();
   if (!kartesData)
     return (
       <div className="flex h-full items-center justify-center text-2xl">

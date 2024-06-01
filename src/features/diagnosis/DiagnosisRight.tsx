@@ -6,6 +6,8 @@ import { FormEvent, useEffect } from "react";
 import DiagnosisRadioGroup from "./DiagnosisRadioGroup";
 import { useCreateKarte } from "../kartes/useCreatekarte";
 import Spinner from "@/ui/Spinner";
+import { useGetSession, useRemoveSession } from "@/hooks/useSessions";
+import { useRemoveLocalStorage } from "@/hooks/useLocalStorage";
 
 interface DiagnosisRightProps {
   onNext: () => void;
@@ -29,6 +31,13 @@ function DiagnosisRight({
   useEffect(() => {
     if (scores.length === 10) {
       const calcedKarteScore = calcKarteScore(scores, email);
+
+      // diagnosis-resultが存在した際、まずはremoveする
+      if (useGetSession("diagnosis-result")) {
+        useRemoveLocalStorage("kartes-data");
+        useRemoveSession("diagnosis-result");
+      }
+
       createKarte(calcedKarteScore);
     }
 

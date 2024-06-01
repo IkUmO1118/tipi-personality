@@ -28,3 +28,5 @@ export default {
 - 画像読み込みの最適化
 - ~~ResultContainer.tsxのrefactoring~~
 - 性格特性の組み合わせから得られる、傾向や向いている職、具体的な要素など
+- ~~session(local)Storageが存在しても、再診断を行えるようにremoveする~~
+- localStorage (useGetLocalStorageKart)の整理

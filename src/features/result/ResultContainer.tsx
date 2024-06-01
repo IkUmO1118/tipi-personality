@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { KarteProps, KartesProps } from "@/utils/helper";
 import ResultCard from "./ResultCard";
-import { useGetLocalStorage } from "@/hooks/useLocalStorage";
+import { useGetLocalStorageKartes } from "@/hooks/useLocalStorage";
 import ResultProgressSection from "./ResultProgressSection";
 import { kartesHash } from "../Report/ReportContainer";
 
@@ -12,7 +12,7 @@ function ResultContainer() {
     conscientiousness,
     openness,
     emotionalStability,
-  }: KartesProps = JSON.parse(useGetLocalStorage("kartes-data")!);
+  }: KartesProps = useGetLocalStorageKartes();
   const [selectedData, setSelectedData] = useState<KarteProps>(extraversion);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
