@@ -1,7 +1,7 @@
 import RegisterRight from "@/features/register/RegisterRight";
 import { useQuote } from "@/features/register/useQuote";
 import Logo from "@/ui/Logo";
-import SpinnerMini from "@/ui/SpinnerMini";
+import SkeltonQuote from "@/ui/SkeltonQuote";
 
 function Register() {
   const { data, isLoading } = useQuote();
@@ -13,7 +13,7 @@ function Register() {
         </div>
         <article className="flex flex-col gap-2 text-white">
           {isLoading ? (
-            <SpinnerMini />
+            <SkeltonQuote />
           ) : (
             <>
               <h4 className="text-lg font-medium">

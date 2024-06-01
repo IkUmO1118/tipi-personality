@@ -3,7 +3,7 @@ function SpinnerMini() {
     <div role="status" className="flex items-center justify-center">
       <svg
         aria-hidden="true"
-        className="mx-auto my-16 h-10 w-10 animate-spin fill-gray-200 text-neutral-900"
+        className="mx-auto my-auto h-10 w-10 animate-spin fill-gray-200 text-neutral-900"
         // className="mx-auto my-16 h-10 w-10 animate-spin fill-neutral-900 text-gray-200"
         viewBox="0 0 100 101"
         fill="none"
