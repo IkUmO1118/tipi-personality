@@ -1,4 +1,4 @@
-export type personalitySummaryProps = {
+export type personalityProps = {
   extravert: string;
   introvert: string;
   openMinded: string;
@@ -11,7 +11,7 @@ export type personalitySummaryProps = {
   anxious: string;
 };
 
-export const personalitySummary: personalitySummaryProps = {
+export const personalitySummary: personalityProps = {
   extravert:
     "外向的な人たちは集団行動を好み、社交的な交流から活力を得る。熱中しやすく、興奮しやすい傾向がある。",
   introvert:
@@ -31,4 +31,17 @@ export const personalitySummary: personalitySummaryProps = {
   calm: "情緒が安定している人たちは、自分に自信があり、冷静でストレスに強い。心配しすぎることを嫌い、目標達成のためなら無理をしない。",
   anxious:
     "気分屋な人たちは自意識過剰で、ストレスに敏感である。さまざまな感情を経験しやすく、成功志向、完璧主義、向上心が強い。",
+};
+
+export const personalitythoughtTendency: personalityProps = {
+  extravert: "",
+  introvert: "",
+  openMinded: "",
+  conventional: "",
+  agreeable: "",
+  assertive: "",
+  conscientious: "",
+  flexible: "",
+  calm: "",
+  anxious: "",
 };

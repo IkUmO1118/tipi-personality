@@ -41,15 +41,15 @@ function ReportContainer() {
 
   return (
     <div
-      className={`flex h-full transition-all duration-150 ${secondaryColor}`}
+      className={`flex h-full ${secondaryColor} transition-colors duration-100`}
     >
-      <section className="mx-auto flex h-3/4 w-8/12 flex-col self-center  overflow-hidden rounded-xl bg-white shadow-2xl">
+      <section className="mx-auto flex h-3/4 w-8/12 flex-col self-center overflow-hidden rounded-xl bg-white shadow-2xl transition-colors duration-100">
         <div
-          className={`flex h-44 items-center justify-center ${primaryColor.bg} text-2xl font-bold text-white transition-all duration-150`}
+          className={`flex h-44 items-center justify-center ${primaryColor.bg} bg-opacity-70 text-2xl font-bold text-white transition-all duration-100`}
         >
           <h2 className="mb-4">{title[1]}</h2>
         </div>
-        <div className="flex h-full gap-16 px-20">
+        <div className="flex h-full gap-16 px-20 transition-all duration-100">
           <img
             src={`/personality/${type}.svg`}
             alt={`${type} images`}

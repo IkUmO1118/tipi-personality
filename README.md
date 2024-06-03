@@ -29,5 +29,5 @@ export default {
 - 性格特性の組み合わせから得られる、傾向や向いている職、具体的な要素など
 - ~~session(local)Storageが存在しても、再診断を行えるようにremoveする~~
 - ~~localStorage (useGetLocalStorageKart)の整理~~
-- Karteとdiagnosis-resultの整理(診断直後とそれ以降で名称が変更されるのは不自然)
+- Karteとdiagnosis-resultの整理(storage名の整理・診断直後とそれ以降で名称が変更されるのは不自然)
 - ~~名言apiの使用と適用~~
