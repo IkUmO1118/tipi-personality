@@ -5,11 +5,33 @@ function HeaderMenu() {
   const isResult = useGetLocalStorage("kartes-data") !== null;
 
   return (
-    <div className="flex items-center justify-center gap-5 text-neutral-800">
-      {isResult && <NavLink to="result">結果</NavLink>}
-      <NavLink to="register">性格診断テスト</NavLink>
-      <NavLink to="personality">５因子特性について</NavLink>
-      <NavLink to="contact">お問い合わせ</NavLink>
+    <div className="flex justify-center gap-5 text-neutral-800">
+      {isResult && (
+        <div className="relative flex">
+          <NavLink to="result" className="peer self-center">
+            <span>結果</span>
+          </NavLink>
+          <span className="absolute left-0 top-0 w-full peer-[&.active]:border-2 peer-[&.active]:border-black"></span>
+        </div>
+      )}
+      <div className="relative flex">
+        <NavLink to="register" className="peer self-center">
+          <span>性格診断テスト</span>
+        </NavLink>
+        <span className="absolute left-0 top-0 w-full peer-[&.active]:border-2 peer-[&.active]:border-black"></span>
+      </div>
+      <div className="relative flex">
+        <NavLink to="personality" className="peer self-center">
+          <span>５因子特性について</span>
+        </NavLink>
+        <span className="absolute left-0 top-0 w-full peer-[&.active]:border-2 peer-[&.active]:border-black"></span>
+      </div>
+      <div className="relative flex">
+        <NavLink to="contact" className="peer self-center">
+          <span>お問い合わせ</span>
+        </NavLink>
+        <span className="absolute left-0 top-0 w-full peer-[&.active]:border-2 peer-[&.active]:border-black"></span>
+      </div>
     </div>
   );
 }

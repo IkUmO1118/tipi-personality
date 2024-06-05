@@ -3,7 +3,7 @@ import Logo from "./Logo";
 
 function Header() {
   return (
-    <div className="grid grid-cols-[1fr_10fr_1fr] border-b border-neutral-300 px-8">
+    <div className="sticky top-0 z-10 grid grid-cols-[1fr_10fr_1fr] bg-white px-8 shadow">
       <Logo mode="light" />
       <HeaderMenu />
     </div>
