@@ -32,8 +32,9 @@ function ResultCard({
       <img
         className="h-32 w-32"
         src={`/personality/${type}.svg`}
-        alt="personality image"
+        alt={`${type} image`}
       />
+
       <p className="text-base">{personalitySummary[type]}</p>
       <NavLink
         className="mt-auto self-start text-cyan-600"

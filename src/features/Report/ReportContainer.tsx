@@ -43,18 +43,13 @@ function ReportContainer() {
     <div
       className={`flex h-full ${secondaryColor} transition-colors duration-100`}
     >
-      <section className="mx-auto flex h-3/4 w-8/12 flex-col self-center overflow-hidden rounded-xl bg-white shadow-2xl transition-colors duration-100">
+      <section className="mx-auto flex h-3/4 w-6/12 flex-col self-center overflow-hidden rounded-xl bg-white shadow-2xl transition-colors duration-100">
         <div
           className={`flex h-44 items-center justify-center ${primaryColor.bg} bg-opacity-70 text-2xl font-bold text-white transition-all duration-100`}
         >
           <h2 className="mb-4">{title[1]}</h2>
         </div>
         <div className="flex h-full gap-16 px-20 transition-all duration-100">
-          <img
-            src={`/personality/${type}.svg`}
-            alt={`${type} images`}
-            className="w-4/12"
-          />
           <div className="my-auto flex w-full flex-col gap-6">
             <h2 className="text-4xl font-medium text-neutral-800">
               {isPositive ? per : 100 - per}%{" "}
