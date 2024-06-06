@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { KarteProps, KartesProps } from "@/utils/helper";
 import ResultCard from "./ResultCard";
-import { useGetLocalStorage } from "@/hooks/useLocalStorage";
 import ResultProgressSection from "./ResultProgressSection";
-import { kartesHash } from "../Report/ReportContainer";
+import { kartesHash } from "../report/ReportContainer";
+import { useGetSession } from "@/hooks/useSessions";
 
 function ResultContainer() {
-  const kartesData = JSON.parse(useGetLocalStorage("kartes-data")!);
+  const kartesData = JSON.parse(useGetSession("kartes-data")!);
   const {
     extraversion,
     agreeableness,

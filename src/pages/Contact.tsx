@@ -5,7 +5,7 @@ function Contact() {
       <h3 className="border-t border-neutral-300 pt-8 text-2xl">
         質問、ご意見やご感想をお気軽にお寄せください。いただいたメッセージはすべて読ませていただきます。あなたからのメッセージを楽しみにしています。
       </h3>
-      <h3 className="text-xl underline">ikumo1118free@gmail.com</h3>
+      <h3 className="text-xl underline">ikumo@example.com</h3>
     </div>
   );
 }

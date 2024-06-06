@@ -1,9 +1,9 @@
 import ResultContainer from "@/features/result/ResultContainer";
-import { useGetLocalStorage } from "@/hooks/useLocalStorage";
+import { useGetSession } from "@/hooks/useSessions";
 import KartesNotFound from "@/ui/KartesNotFound";
 
 function Result() {
-  const isKartesData = useGetLocalStorage("kartes-data") !== null;
+  const isKartesData = useGetSession("kartes-data") !== null;
   if (!isKartesData) return <KartesNotFound />;
 
   return <ResultContainer />;

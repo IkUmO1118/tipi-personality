@@ -1,4 +1,3 @@
-import { useGetLocalStorage } from "@/hooks/useLocalStorage";
 import PersonalityAgreeableness from "@/ui/PersonalityAgreeableness";
 import PersonalityConscientiousness from "@/ui/PersonalityConscientiousness";
 import PersonalityEmotionalStability from "@/ui/PersonalityEmotionalStability";
@@ -9,9 +8,8 @@ import { useParams } from "react-router-dom";
 function PersonalityDetails() {
   const { personalityId } = useParams();
   // もし、すでに診断を受けており、kertes-Dataがstorageに存在した場合、彼らの情報を少し盛り込んだ内容を以下のcomponentに表示する
-  const data = useGetLocalStorage("kartes-data")!;
-  const kartesData = JSON.parse(data)?.value;
-  console.log(kartesData[personalityId!]);
+  // const data = useGetSession("kartes-data")!;
+  // const kartesData = JSON.parse(data)?.value;
 
   return (
     <div className="px-4">

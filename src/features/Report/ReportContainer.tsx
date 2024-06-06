@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-import { useGetSession } from "@/hooks/useSessions";
-import { useSetLocalStorage } from "@/hooks/useLocalStorage";
+import { useGetSession, useSetSession } from "@/hooks/useSessions";
 import { KartesProps, KartesScoreProps } from "@/utils/helper";
 import { personalitySummary } from "@/data/data-personality";
 import { transformKarte } from "@/hooks/useTransformKarte";
@@ -26,7 +25,7 @@ function ReportContainer() {
   );
 
   // localStorageに新たなkartes-dataを登録
-  useSetLocalStorage({
+  useSetSession({
     key: "kartes-data",
     value: JSON.stringify({
       value: transformedKarte,
