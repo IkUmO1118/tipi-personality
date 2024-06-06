@@ -11,7 +11,6 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Testimonials from "./pages/Testimonials";
 import ScoresContextProvider from "./contexts/scores-context";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import PersonalityDetails from "./pages/PersonalityDetails";
 
 const queryClient = new QueryClient({
@@ -25,7 +24,6 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools initialIsOpen={false} />
       <ScoresContextProvider>
         <BrowserRouter>
           <Routes>

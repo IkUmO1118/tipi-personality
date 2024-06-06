@@ -8,8 +8,6 @@ import { useParams } from "react-router-dom";
 function PersonalityDetails() {
   const { personalityId } = useParams();
   // もし、すでに診断を受けており、kertes-Dataがstorageに存在した場合、彼らの情報を少し盛り込んだ内容を以下のcomponentに表示する
-  // const data = useGetSession("kartes-data")!;
-  // const kartesData = JSON.parse(data)?.value;
 
   return (
     <div className="px-4">

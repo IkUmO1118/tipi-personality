@@ -4,8 +4,8 @@ import { useGetSession, useSetSession } from "@/hooks/useSessions";
 import { KartesProps, KartesScoreProps } from "@/utils/helper";
 import { personalitySummary } from "@/data/data-personality";
 import { transformKarte } from "@/hooks/useTransformKarte";
-import ReportNavigation from "./ReportNavigation";
 import ReportProgressSection from "./ReportProgressSection";
+import ReportNavigation from "./ReportNavigation";
 
 export const kartesHash: { [key: number]: keyof KartesProps } = {
   0: "extraversion",
