@@ -1,6 +1,6 @@
 import { KartesProps } from "@/utils/helper";
-import Progress from "./Progress";
 import { useGetSession } from "@/hooks/useSessions";
+import PersonalityProsgressSection from "./PersonalityProsgressSection";
 
 function PersonalityExtraversion() {
   const kartesData = JSON.parse(useGetSession("kartes-data"));
@@ -70,10 +70,12 @@ function PersonalityExtraversion() {
     );
   }
   const {
-    extraversion: { per, type, title, positive, negative },
+    extraversion,
+    agreeableness,
+    conscientiousness,
+    openness,
+    emotionalStability,
   }: KartesProps = kartesData.value;
-
-  const isPositive = type === positive[0];
 
   return (
     <>
@@ -134,22 +136,13 @@ function PersonalityExtraversion() {
           </div>
         </div>
         <div className="w-full px-3">
-          {kartesData !== null && (
-            <article className="mt-10 flex flex-col gap-3 rounded-md bg-sky-100 p-3 shadow-sm">
-              <h3 className="flex justify-center gap-2 text-base font-medium">
-                <span className="text-cyan-600">{per}%</span> {title[0]}
-              </h3>
-              <Progress
-                value={per}
-                color="bg-cyan-600"
-                style={`h-3 w-full ${!isPositive && "justify-end"}`}
-              />
-              <div className="flex justify-between text-sm">
-                <p className="w-auto font-medium">{positive[1]}</p>
-                <p className="w-auto font-medium">{negative[1]}</p>
-              </div>
-            </article>
-          )}
+          <PersonalityProsgressSection
+            extraversion={extraversion}
+            agreeableness={agreeableness}
+            conscientiousness={conscientiousness}
+            openness={openness}
+            emotionalStability={emotionalStability}
+          />
         </div>
       </div>
     </>

@@ -1,8 +1,8 @@
-import PersonalityAgreeableness from "@/ui/PersonalityAgreeableness";
-import PersonalityConscientiousness from "@/ui/PersonalityConscientiousness";
-import PersonalityEmotionalStability from "@/ui/PersonalityEmotionalStability";
-import PersonalityExtraversion from "@/ui/PersonalityExtraversion";
-import PersonalityOpenness from "@/ui/PersonalityOpenness";
+import PersonalityExtraversion from "@/features/personality/PersonalityExtraversion";
+import PersonalityAgreeableness from "@/features/personality/PersonalityAgreeableness";
+import PersonalityConscientiousness from "@/features/personality/PersonalityConscientiousness";
+import PersonalityOpenness from "@/features/personality/PersonalityOpenness";
+import PersonalityEmotionalStability from "@/features/personality/PersonalityEmotionalStability";
 import { useParams } from "react-router-dom";
 
 function PersonalityDetails() {
