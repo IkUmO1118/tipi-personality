@@ -10,10 +10,11 @@
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
 - ~~sessionStorageがなかった際(存在するurlに飛べたが、sessionStorageに予期したkeyが存在しなかった)、navigate('/home')に飛ばすなどの動作~~
-- 画像読み込みの最適化
 - ~~ResultContainer.tsxのrefactoring~~
 - ~~性格特性の組み合わせから得られる、傾向や向いている職、具体的な要素な~~
 - ~~性格特性の単体の説明文~~
 - ~~session(local)Storageが存在しても、再診断を行えるようにremoveする~~
 - ~~localStorage (useGetLocalStorageKart)の整理~~
 - ~~名言apiの使用と適用~~
+- Netlifyへのdeploy後、画像の読み込みがとても遅い
+- Vercelへのdeployができない。Report ReportContainerのファイルに問題？
