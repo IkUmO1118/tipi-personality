@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { KarteProps, KartesProps } from "@/utils/helper";
+import { KarteProps, KartesProps, kartesHash } from "@/utils/helper";
 import ResultCard from "./ResultCard";
 import ResultProgressSection from "./ResultProgressSection";
-import { kartesHash } from "../report/ReportContainer";
 import { useGetSession } from "@/hooks/useSessions";
 
 function ResultContainer() {
@@ -20,7 +19,7 @@ function ResultContainer() {
   return (
     <div className="mx-40 flex h-full flex-col gap-4 pb-8 pt-16 text-neutral-800">
       <h1 className="pb-2 text-6xl font-medium">あなたの結果</h1>
-      <h4 className="text-2xl text-neutral-500">
+      <h4 className="text-2x6l text-neutral-500">
         性格テストの結果を確認して、パーソナリティ特性の傾向や特徴を詳しく学びましょう。
       </h4>
       <div className="flex h-full flex-col divide-y-2 divide-neutral-300 rounded-md border-2 border-neutral-300">

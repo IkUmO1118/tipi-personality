@@ -56,3 +56,11 @@ export type KartesProps = {
   openness: KarteProps;
   emotionalStability: KarteProps;
 };
+
+export const kartesHash: { [key: number]: keyof KartesProps } = {
+  0: "extraversion",
+  1: "agreeableness",
+  2: "conscientiousness",
+  3: "openness",
+  4: "emotionalStability",
+};

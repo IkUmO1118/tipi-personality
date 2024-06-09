@@ -1,19 +1,11 @@
 import { useState } from "react";
 
 import { useGetSession, useSetSession } from "@/hooks/useSessions";
-import { KartesProps, KartesScoreProps } from "@/utils/helper";
+import { KartesProps, KartesScoreProps, kartesHash } from "@/utils/helper";
 import { personalitySummary } from "@/data/data-personality";
 import { transformKarte } from "@/hooks/useTransformKarte";
 import ReportProgressSection from "./ReportProgressSection";
 import ReportNavigation from "./ReportNavigation";
-
-export const kartesHash: { [key: number]: keyof KartesProps } = {
-  0: "extraversion",
-  1: "agreeableness",
-  2: "conscientiousness",
-  3: "openness",
-  4: "emotionalStability",
-};
 
 function ReportContainer() {
   const [openId, setOpenId] = useState<number>(0);
