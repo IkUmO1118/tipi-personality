@@ -1,4 +1,4 @@
-import ReportContainer from "@/features/report/ReportContainer";
+import ReportContainer from "../features/report/ReportContainer";
 
 function Report() {
   return <ReportContainer />;
