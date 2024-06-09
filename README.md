@@ -9,26 +9,11 @@
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
-
 - ~~sessionStorageがなかった際(存在するurlに飛べたが、sessionStorageに予期したkeyが存在しなかった)、navigate('/home')に飛ばすなどの動作~~
 - 画像読み込みの最適化
 - ~~ResultContainer.tsxのrefactoring~~
-- 性格特性の組み合わせから得られる、傾向や向いている職、具体的な要素な
+- ~~性格特性の組み合わせから得られる、傾向や向いている職、具体的な要素な~~
 - ~~性格特性の単体の説明文~~
 - ~~session(local)Storageが存在しても、再診断を行えるようにremoveする~~
 - ~~localStorage (useGetLocalStorageKart)の整理~~
-- ~~Karteとdiagnosis-resultの整理(storage名の整理・診断直後とそれ以降で名称が変更されるのは不自然)~~
 - ~~名言apiの使用と適用~~
