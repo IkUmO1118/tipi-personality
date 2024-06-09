@@ -1,5 +1,7 @@
+import DataNotFound from "@/ui/DataNotFound";
+
 function Testimonials() {
-  return <div>testimonials</div>;
+  return <DataNotFound text="Testimonialsのデータが存在しません" />;
 }
 
 export default Testimonials;
