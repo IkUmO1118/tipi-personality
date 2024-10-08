@@ -1,10 +1,10 @@
+import { quotes, QuotesProps } from "@/data/data-quotes";
 import RegisterRight from "@/features/register/RegisterRight";
-import { useQuote } from "@/features/register/useQuote";
 import Logo from "@/ui/Logo";
-import SkeltonQuote from "@/ui/SkeltonQuote";
 
 function Register() {
-  const { data, isLoading } = useQuote();
+  const randomQuote: QuotesProps = quotes[Math.floor(Math.random() * 50)];
+
   return (
     <main className="grid h-screen grid-cols-2 p-3">
       <div className="flex h-full flex-col justify-between rounded-l-lg bg-neutral-900 px-10 py-7">
@@ -12,16 +12,12 @@ function Register() {
           <Logo mode="dark" />
         </div>
         <article className="flex flex-col gap-2 text-white">
-          {isLoading ? (
-            <SkeltonQuote />
-          ) : (
-            <>
-              <h4 className="text-lg font-medium">
-                &#34;{data?.content}&rdquo;
-              </h4>
-              <p className="text-sm">{data?.authorSlug}</p>
-            </>
-          )}
+          <>
+            <h4 className="text-lg font-medium">
+              &#34;{randomQuote.content}&rdquo;
+            </h4>
+            <p className="text-sm">{randomQuote.author}</p>
+          </>
         </article>
       </div>
       <RegisterRight />
