@@ -55,8 +55,8 @@ The site consists of the following sections:
 - **Diagnosis** : Personality diagnosis form with 7 choice options
 - **Personality** : Detailed information on the 5 personality traits
 - **Contact** :Provides contact information for the site administrator
-- **Privacy**　: Detailed explanation of the privacy policy
-- **Testimonials**　:Introduces feedback and experiences from users who have taken the TIPI test
+- **Privacy** : Detailed explanation of the privacy policy
+- **Testimonials** :Introduces feedback and experiences from users who have taken the TIPI test
 
 ## Future Enhancements
 
